@@ -1,0 +1,4 @@
+{
+    "mfe2": "http://localhost:4300/remoteEntry.json",
+    "ng19-mfe-components": "http://localhost:4500/remoteEntry.json"
+}

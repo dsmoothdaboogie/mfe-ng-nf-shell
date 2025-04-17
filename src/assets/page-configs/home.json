@@ -1,0 +1,83 @@
+{
+  "layout": "grid",
+  "containerStyles": {
+    "display": "grid",
+    "gridTemplateColumns": "150px 1fr",
+    "gridTemplateRows": "auto 1fr auto",
+    "gridTemplateAreas": 
+      "'header header' 'sidebar main' 'footer footer'",
+    "minHeight": "calc(100vh - 150px)", 
+    "gap": "10px",
+    "padding": "10px"
+  },
+  "components": [
+    {
+      "elementName": "h2", 
+      "styles": { "grid-area": "header" },
+      "config": { 
+        "textContent": "User Dashboard (from Config)"
+      }
+    },
+    {
+      "elementName": "ul",
+      "styles": { 
+        "grid-area": "sidebar",
+        "listStyle": "none",
+        "padding": "0",
+        "margin": "0",
+        "borderRight": "1px solid #ccc"
+      },
+      "config": {
+        "innerHTML": "<li><a href='/page/home'>Dashboard</a></li><li><a href='/page/profile'>Profile Config</a></li><li><a href='/mfe1'>MFE1</a></li><li><a href='/mfe2'>MFE2</a></li>" 
+      }
+    },
+    {
+      "elementName": "widget-a-element", 
+      "remoteName": "ng19-mfe-components",
+      "exposedModule": "./widget-a",
+      "styles": { "grid-area": "main" },
+      "config": { 
+        "innerLayout": "flex",
+        "innerLayoutStyles": { 
+          "gap": "20px", 
+          "flex-wrap": "wrap",
+          "align-items": "flex-start"
+        }
+      }
+    },
+    {
+      "elementName": "widget-b-element", 
+      "remoteName": "ng19-mfe-components",
+      "exposedModule": "./widget-b",
+      "styles": { "grid-area": "main" }
+    },
+    {
+      "elementName": "user-list-widget", 
+      "remoteName": "ng19-mfe-components",
+      "exposedModule": "./user-list-widget",
+      "styles": { "grid-area": "main" },
+      "config": { 
+        "title": "User List (from Shell)"
+      }
+    },
+    {
+      "elementName": "stats-summary-widget", 
+      "remoteName": "ng19-mfe-components",
+      "exposedModule": "./stats-summary-widget",
+      "styles": { "grid-area": "main" }
+    },
+    {
+      "elementName": "recent-activity-widget", 
+      "remoteName": "ng19-mfe-components",
+      "exposedModule": "./recent-activity-widget",
+      "styles": { "grid-area": "main" }
+    },
+    {
+      "elementName": "small", 
+      "styles": { "grid-area": "footer", "textAlign": "center", "paddingTop": "10px", "borderTop": "1px solid #eee" },
+      "config": {
+        "textContent": "Dynamic Footer - (c) 2025"
+      }
+    }
+  ]
+} 

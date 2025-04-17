@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, NgZone, inject } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    RouterModule
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'angular-shell';
+  title = 'shell';
+
+  constructor() {
+    (globalThis as any).ngZone = inject(NgZone);
+  }
 }
+
